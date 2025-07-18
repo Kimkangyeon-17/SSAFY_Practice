@@ -1,0 +1,190 @@
+body {
+    --theme-bg: #ffe3d3;
+    --theme-container: #fff;
+    --theme-user: linear-gradient(135deg, #ffd6b3 0%, #FFBE98 100%);
+    --theme-bot: #fff;
+    --theme-border: #FFBE98;
+    --theme-btn: #f7a072;
+    --theme-btn-hover: #d48c6a;
+    --theme-text: #222;
+    --theme-bot-text: #444;
+    background: var(--theme-bg);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    transition: background 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-container {
+    background: var(--theme-container);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    width: 370px;
+    min-width: 280px;
+    min-height: 420px;
+    max-width: 700px;
+    max-height: 900px;
+    padding: 24px 16px 16px 16px;
+    border: 2px solid var(--theme-border);
+    transition: background 0.3s, border 0.3s;
+    position: relative;
+    resize: both;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+.resize-handle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 18px;
+    height: 18px;
+    background: url('data:image/svg+xml;utf8,<svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><line x1="2" y1="16" x2="16" y2="2" stroke="%23FFBE98" stroke-width="2"/><line x1="6" y1="16" x2="16" y2="6" stroke="%23FFBE98" stroke-width="2"/></svg>') no-repeat center center;
+    cursor: se-resize;
+    z-index: 10;
+}
+
+.chat-box {
+    flex: 1 1 auto;
+    min-height: 120px;
+    max-height: calc(100% - 70px);
+    overflow-y: auto;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: var(--theme-bg);
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s;
+}
+
+.message {
+    max-width: 75%;
+    padding: 10px 16px;
+    margin: 6px 0;
+    border-radius: 18px;
+    font-size: 15px;
+    word-break: break-word;
+    display: inline-block;
+    position: relative;
+    transition: background 0.3s, color 0.3s;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 18px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+.bot {
+    align-self: flex-start;
+    background: var(--theme-bot);
+    color: var(--theme-bot-text);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 18px;
+}
+
+#chat-form {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+#user-input {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 10px;
+    border: 1.5px solid var(--theme-border);
+    border-radius: 20px;
+    font-size: 15px;
+    outline: none;
+    background: var(--theme-bg);
+    color: var(--theme-text);
+    transition: background 0.3s, color 0.3s;
+}
+
+.switch-btn, button {
+    padding: 10px 18px;
+    border: none;
+    background: var(--theme-btn);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.switch-btn:hover, button:hover {
+    background: var(--theme-btn-hover);
+}
+.mode-switch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+}
+.switch-btn {
+    background: var(--theme-btn);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 6px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background 0.2s;
+}
+.switch-btn:hover {
+    background: var(--theme-btn-hover);
+}
+
+/* 테마 정의 */
+body.dark-mode {
+    --theme-bg: #232323;
+    --theme-container: #2d2d2d;
+    --theme-user: linear-gradient(135deg, #d48c6a 0%, #FFBE98 100%);
+    --theme-bot: #232323;
+    --theme-border: #FFBE98;
+    --theme-btn: #d48c6a;
+    --theme-btn-hover: #f7a072;
+    --theme-text: #ffe3d3;
+    --theme-bot-text: #ffe3d3;
+}
+body.theme-mint {
+    --theme-bg: #e0fff7;
+    --theme-container: #d6f5ee;
+    --theme-user: linear-gradient(135deg, #b2f7ef 0%, #5ce1e6 100%);
+    --theme-bot: #fff;
+    --theme-border: #5ce1e6;
+    --theme-btn: #5ce1e6;
+    --theme-btn-hover: #3ec9b3;
+    --theme-text: #222;
+    --theme-bot-text: #444;
+}
+body.theme-lavender {
+    --theme-bg: #f3e8ff;
+    --theme-container: #e6d6ff;
+    --theme-user: linear-gradient(135deg, #d6b4fc 0%, #a084e8 100%);
+    --theme-bot: #fff;
+    --theme-border: #a084e8;
+    --theme-btn: #a084e8;
+    --theme-btn-hover: #7c5fe6;
+    --theme-text: #222;
+    --theme-bot-text: #444;
+}
+body.theme-neon {
+    --theme-bg: #e0ffe0;
+    --theme-container: #d6ffd6;
+    --theme-user: linear-gradient(135deg, #baffb4 0%, #39ff14 100%);
+    --theme-bot: #fff;
+    --theme-border: #39ff14;
+    --theme-btn: #39ff14;
+    --theme-btn-hover: #00c800;
+    --theme-text: #222;
+    --theme-bot-text: #444;
+}
